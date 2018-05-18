@@ -559,6 +559,13 @@ redis 主从复制的优点：
 |    2 |  b   |  8000   | null |
 |    3 |  c   |  5000   | 1    |
 |    4 |  d   |  6000   | 3    |
+
+```sql
+SELECT a.*, b.*
+FROM `user` as a
+LEFT JOIN `user` as b ON a.pid = b.id AND a.salary > b.salary
+WHERE b.id > 0;
+```
     
 
 #### 82、在一个坐标系内有一个N个点组成的多边形,现在有一个坐标点,写代码或思路来判断这个点是否处于多边形内
